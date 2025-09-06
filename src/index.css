@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* global.css */
+/* Import Oxanium font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Somnia Palette - Re-confirmed */
+  --bg-dark-purple: #10061E; /* A deep, dark purple base */
+  --primary-cyan: #00D1FF;
+  --accent-magenta: #E600FF;
+  --accent-purple: #5A00FF;
+
+  /* Semantics (Can remain similar for clarity) */
+  --semantic-green: #00FF7F;
+  --semantic-red: #DC143C;
+
+  /* Text & Borders */
+  --text-primary: #F0F0F0;
+  --border-color: #4A277A; /* A muted purple for borders */
+
+  /* New Font Family */
+  --font-display: 'Oxanium', sans-serif;
+}
+
+/* Base styles for the body */
+body {
+  font-family: var(--font-display); /* Apply the new font globally */
+  background-color: var(--bg-dark-purple);
+  color: var(--text-primary);
+  line-height: 1.6; /* Improve readability */
+
+  /* --- SUPERB BACKGROUND ENHANCEMENTS --- */
+  /* This creates a subtle grid/circuit board texture */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px; /* Adjust grid size */
+  background-attachment: fixed; /* Keep background static during scroll */
+  
+  /* Add a dark vignette effect */
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.8), inset 0 0 150px rgba(0,0,0,0.6);
+}
+
+/* Keyframe animations for the text */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Slightly more dramatic animation */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.9s ease-out forwards; /* Slightly longer duration */
+  opacity: 0; /* Start hidden */
+}
+
+@layer utilities {
+  .animate-pulse-subtle {
+    animation: pulse-subtle 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}

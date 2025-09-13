@@ -24,13 +24,10 @@ The platform is **trustless** and **non-custodial**. Users never lose control of
 *   **Integrated Trading Interface:** The dApp features a built-in trading interface that provides a **real-time P&L chart** and allows players to swap coins directly within the application to optimize their trading strategy without ever leaving the competitive environment.
     
 *   **Automated and Unbiased Judging:** The backend referee service uses reliable Somnia APIs to ensure fair and timely resolution of every duel.
-    
-*   **Public Leaderboards:** A system to track top traders, their win/loss records, and showcase the most skilled participants in the arena.
-    
 
 ### 🗺️ The User Journey: A Duel in Four Steps
 
-1.  **Challenge Creation:** A user (the "Challenger") initiates a duel by defining the wager asset and the duration of the competition, with options including: **3 minutes (for demo), 1 hour, 12 hours, 24 hours, 3 days, and 7 days.** This creates an open challenge in the app's public lobby.
+1.  **Challenge Creation:** A user (the "Challenger") initiates a duel by defining the wager asset and the duration of the competition, This creates an open challenge in the app's public lobby.
     
 2.  **Joining & Staking:** An "Opponent" can accept an open challenge. Both players are then prompted to deposit their wager into the Duel.sol smart contract. The dApp provides a swap function to allow users to easily convert any supported coin into the required wager asset before staking.
     
@@ -43,7 +40,7 @@ The platform is **trustless** and **non-custodial**. Users never lose control of
 
 Somnia Colosseum is built as a dApp with three core components: the Smart Contract, a Backend Service, and a Frontend Application.
 
-Image comes here
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/3b074eb1-049d-436e-8f6b-51eb04d2e73c" />
 
 **1\. Smart Contract:** The contract's sole purpose is to act as a secure on-chain escrow for player wagers. It holds the funds and has a permissioned resolveDuel function that can only be called by our trusted backend referee. We used **OpenZeppelin's ReentrancyGuard** for security.
 
@@ -114,7 +111,7 @@ npm run dev
     
 *   **Submission Date:** 
     
-*   **Team Members:** 
+*   **Team Members:** @sharwin, @raksha
     
 
 ### 🤝 Contributions & Contact

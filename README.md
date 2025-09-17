@@ -58,7 +58,7 @@ Somnia Colosseum is built as a dApp with three core components: the Smart Contra
 
 **4\. External Services:** This component represents the third-party data provider. The backend service fetches portfolio, balance, and transaction data from the ORMI APIs to accurately calculate P&L and determine the winner of a duel.
 
-*   **Frameworks: N/A (External API Provider).
+*   **Frameworks:** N/A (External API Provider).
     
 
 ### 🖼️ UI/UX Design

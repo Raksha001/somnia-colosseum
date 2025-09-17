@@ -55,6 +55,10 @@ Somnia Colosseum is built as a dApp with three core components: the Smart Contra
 **3\. Frontend Application:** The frontend is the user interface where all interactions happen. We used Wagmi and Viem hooks for all blockchain interactions, making it simple for users to connect their wallets, call contract functions, and sign transactions.
 
 *   **Frameworks:** React, Vite, and Tailwind CSS.
+
+**4\. External Services:** This component represents the third-party data provider. The backend service fetches portfolio, balance, and transaction data from the ORMI APIs to accurately calculate P&L and determine the winner of a duel.
+
+*   **Frameworks: N/A (External API Provider).
     
 
 ### 🖼️ UI/UX Design
@@ -109,15 +113,19 @@ npm run dev
     
 *   **Track:** DeFi & Trading
     
-*   **Submission Date:** 
+*   **Submission Date:** 19-09-25
     
 *   **Team Members:** @sharwin, @raksha
+
+*   **Demo Link:** 
+    
+*   **Pitch Deck Link:** 
+    
+*   **Contract Deployed Address:** **0x0F98B3c8C7C5E5D5f02B7D725267ada38168728E**
+    
+*   **Somnia Router Addres:**: 0xb98c15a0dC1e271132e341250703c7e94c059e8D
     
 
-### 🤝 Contributions & Contact
+### 🤝 Contributions
 
 We welcome contributions! Feel free to open an issue or submit a pull request if you find a bug or have an idea for an enhancement.
-
-*   **Contact:**
-    
-*   **Project Link:** 

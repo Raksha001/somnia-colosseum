@@ -65,8 +65,6 @@ Somnia Colosseum is built as a dApp with three core components: the Smart Contra
 
 The user interface is designed to be clean, intuitive, and highly functional. It provides a seamless experience for both creating and joining duels, with a clear view of live competition data.
 
-AddUIImageHere
-
 ### ⚙️ Getting Started
 
 To run this project locally, follow these steps:
@@ -117,9 +115,9 @@ npm run dev
     
 *   **Team Members:** @sharwin, @raksha
 
-*   **Demo Link:** 
+*   **Demo Link:** [Demo](https://drive.google.com/file/d/1mqUF5IDUzTUijtu8a_11JTP50v-sNrzB/view?usp=drive_link)
     
-*   **Pitch Deck Link:** 
+*   **Pitch Deck Link:** [Pitch Deck](https://drive.google.com/file/d/1iCtiJu3VqAhZHHelQ-eh4KLxW8HVlUf8/view?usp=sharing)
     
 *   **Contract Deployed Address:** **0x0F98B3c8C7C5E5D5f02B7D725267ada38168728E**
     

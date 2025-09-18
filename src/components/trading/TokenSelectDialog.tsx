@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Search } from 'lucide-react';
-import { type Token, DEFAULT_TOKENS } from '../../../lib/constants';
+import { type Token, DEFAULT_TOKENS } from '../../lib/constants';
 
 interface TokenSelectDialogProps {
   isOpen: boolean;

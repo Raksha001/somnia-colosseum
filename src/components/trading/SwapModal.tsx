@@ -5,9 +5,9 @@ import { createPortal } from 'react-dom';
 import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt, useBalance } from 'wagmi';
 import { parseUnits, formatUnits, type Address } from 'viem';
 import { X, ArrowUpDown, Loader2, ChevronDown } from 'lucide-react';
-import { useSwapStore } from '../../../hooks/use-swap-store';
-import { useDebounce } from '../../../hooks/use-debounce';
-import { type Token, SOMNIA_ROUTER_ADDRESS, WSTT_ADDRESS, routerAbi, erc20Abi } from '../../../lib/constants';
+import { useSwapStore } from '../../hooks/use-swap-store';
+import { useDebounce } from '../../hooks/use-debounce';
+import { type Token, SOMNIA_ROUTER_ADDRESS, WSTT_ADDRESS, routerAbi, erc20Abi } from '../../lib/constants';
 import { TokenSelectDialog } from './TokenSelectDialog';
 
 // Helper hook to get quote from the router

@@ -7,7 +7,7 @@ Somnia Colosseum
 
 Somnia Colosseum is a decentralized application (dApp) that transforms DeFi trading into a competitive, skill-based social game. It provides a trustless and non-custodial platform where two traders can engage in a head-to-head "duel," wagering cryptocurrency on who can achieve a higher trading performance over a set period. The entire process—from wagering to judging and payout—is automated and secured by smart contracts and a backend referee service.
 
-This project was built for the **Somnia hackathon**, leveraging the network's high-performance, low-latency, and EVM-compatible infrastructure to create a real-time, engaging trading experience.
+This project was built for the **Somnia DeFi Mini Hackathon**, leveraging the network's high-performance, low-latency, and EVM-compatible infrastructure to create a real-time, engaging trading experience.
 
 ### 💡 Core Concept & Vision
 
@@ -21,8 +21,8 @@ The platform is **trustless** and **non-custodial**. Users never lose control of
     
 *   **Trustless Smart Contract Escrow:** Wagers are secured by immutable on-chain logic, removing any need to trust a centralized party with your funds.
     
-*   **Integrated Trading Interface:** The dApp features a built-in trading interface that provides a **real-time P&L chart** and allows players to swap coins directly within the application to optimize their trading strategy without ever leaving the competitive environment.
-    
+*   **Integrated Trading Interface:** The dApp features a built-in trading interface that provides a **real-time P&L chart** and allows players to **swap coins** using our **in-duel swap** directly within the application to optimize their trading strategy without ever leaving the competitive environment. The dApp also features **Swap to join** for users who don't have enough balance of the duel's required token. 
+     
 *   **Automated and Unbiased Judging:** The backend referee service uses reliable Somnia APIs to ensure fair and timely resolution of every duel.
 
 ### 🗺️ The User Journey: A Duel in Four Steps

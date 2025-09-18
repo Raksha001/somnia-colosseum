@@ -121,7 +121,7 @@ npm run dev
     
 *   **Contract Deployed Address:** **0x0F98B3c8C7C5E5D5f02B7D725267ada38168728E**
     
-*   **Somnia Router Addres:**: 0xb98c15a0dC1e271132e341250703c7e94c059e8D
+*   **Somnia DEX Router Address:**: 0xb98c15a0dC1e271132e341250703c7e94c059e8D
     
 
 ### 🤝 Contributions

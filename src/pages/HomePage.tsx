@@ -120,7 +120,7 @@ export const HomePage: React.FC = () => {
                 </section>
 
                 {/* --- LEADERBOARD PREVIEW SECTION: "Top Gladiators" --- */}
-                <section>
+                {/* <section>
                     <div className="text-center mb-12">
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Top Gladiators</h2>
                         <p className="text-lg text-[var(--text-primary)] opacity-70">The reigning champions of the weekly arena.</p>
@@ -137,10 +137,10 @@ export const HomePage: React.FC = () => {
                             </div>
                         ))}
                     </div>
-                </section>
+                </section> */}
 
                 {/* --- STATS SECTION: "Battle Statistics" --- */}
-                <section>
+                {/* <section>
                     <div className="max-w-5xl mx-auto py-16 bg-[var(--bg-dark-purple)] bg-opacity-50 backdrop-blur-md rounded-2xl border border-[var(--border-color)]">
                         <div className="grid md:grid-cols-3 gap-8 text-center">
                             <div className="space-y-2">
@@ -157,7 +157,7 @@ export const HomePage: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
             </div>
         </div>

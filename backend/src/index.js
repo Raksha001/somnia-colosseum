@@ -40,7 +40,7 @@ app.get('/health', (req, res) => {
 app.use(errorHandler);
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT,"0.0.0.0", () => {
   console.log(`🚀 Somnia Colosseum Backend running on port ${PORT}`);
 });
 

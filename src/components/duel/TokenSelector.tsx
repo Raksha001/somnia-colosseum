@@ -1,9 +1,30 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useState, useRef, useLayoutEffect, useMemo } from 'react';
 import ReactDOM from 'react-dom';
 import { ChevronDown, Search } from 'lucide-react';
-import { useTokens } from '../../hooks/useTokens';
+import { type Token } from '../../lib/constants';
 
-// A helper hook to detect clicks outside an element
+
+const DEFAULT_TOKENS = [
+  {
+    address: '0x4A3BC48C156384f9564Fd65A53a2f3D534D8f2b7',
+    symbol: 'WSTT',
+    name: 'Wrapped Somnia Testnet Tokens',
+    decimals: 6
+  },
+  {
+    address: '0xDa4FDE38bE7a2b959BF46E032ECfA21e64019b76',
+    symbol: 'USDT.g',
+    name: 'Tether USD.g',
+    decimals: 6
+  },
+  {
+    address: '0xF2F773753cEbEFaF9b68b841d80C083b18C69311',
+    symbol: 'NIA',
+    name: 'NIA Token',
+    decimals: 18
+  }
+];
+// The useOnClickOutside helper hook remains the same
 function useOnClickOutside(ref: React.RefObject<HTMLDivElement>, handler: () => void) {
     React.useEffect(() => {
         const listener = (event: MouseEvent | TouchEvent) => {
@@ -21,24 +42,19 @@ function useOnClickOutside(ref: React.RefObject<HTMLDivElement>, handler: () => 
     }, [ref, handler]);
 }
 
-// The Dropdown component that will be rendered in a Portal
-const TokenDropdown = ({ targetRect, onSelect, onClose, tokens, isLoading, searchQuery, setSearchQuery }) => {
+// The Dropdown component, simplified by removing the `isLoading` prop
+const TokenDropdown = ({ targetRect, onSelect, onClose, filteredTokens, searchQuery, setSearchQuery }) => {
     const dropdownRef = useRef<HTMLDivElement>(null);
     useOnClickOutside(dropdownRef, onClose);
 
     if (!targetRect) return null;
-
-    const filteredTokens = tokens?.filter(token =>
-        token.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        token.symbol.toLowerCase().includes(searchQuery.toLowerCase())
-    ) || [];
 
     return ReactDOM.createPortal(
         <div
             ref={dropdownRef}
             style={{
                 position: 'absolute',
-                top: `${targetRect.bottom + 8}px`, // Position below the button with a gap
+                top: `${targetRect.bottom + 8}px`,
                 left: `${targetRect.left}px`,
                 width: `${targetRect.width}px`,
             }}
@@ -58,8 +74,8 @@ const TokenDropdown = ({ targetRect, onSelect, onClose, tokens, isLoading, searc
                 </div>
             </div>
             <div className="flex-1 overflow-y-auto">
-                {isLoading ? (<div className="p-4 text-center opacity-70">Loading...</div>)
-                : filteredTokens.length > 0 ? (
+                {/* The loading state is removed, as the data is available instantly */}
+                {filteredTokens.length > 0 ? (
                     filteredTokens.map((token) => (
                         <button key={token.address} onClick={() => onSelect(token)} className="w-full p-3 flex items-center space-x-3 hover:bg-[var(--border-color)]/50 transition-colors text-left">
                             <div>
@@ -75,13 +91,25 @@ const TokenDropdown = ({ targetRect, onSelect, onClose, tokens, isLoading, searc
     );
 };
 
-// The main TokenSelector component
-export const TokenSelector: React.FC<{ selectedToken: any, onTokenSelect: (token: any) => void }> = ({ selectedToken, onTokenSelect }) => {
+// The main TokenSelector component, now using the static DEFAULT_TOKENS array
+export const TokenSelector: React.FC<{ selectedToken: Token | null, onTokenSelect: (token: Token) => void }> = ({ selectedToken, onTokenSelect }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [targetRect, setTargetRect] = useState<DOMRect | null>(null);
-    const { data: tokens, isLoading } = useTokens();
     const buttonRef = useRef<HTMLButtonElement>(null);
+    
+    // The useTokens hook has been removed.
+
+    // The filtering logic now operates on the static DEFAULT_TOKENS array.
+    const filteredTokens = useMemo(() => {
+        if (!searchQuery) {
+            return DEFAULT_TOKENS; // Return all tokens if search is empty
+        }
+        return DEFAULT_TOKENS.filter(token =>
+            token.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            token.symbol.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+    }, [searchQuery]); // The dependency is now only `searchQuery`
 
     useLayoutEffect(() => {
         if (isOpen && buttonRef.current) {
@@ -89,7 +117,7 @@ export const TokenSelector: React.FC<{ selectedToken: any, onTokenSelect: (token
         }
     }, [isOpen]);
 
-    const handleSelect = (token: any) => {
+    const handleSelect = (token: Token) => {
         onTokenSelect(token);
         setIsOpen(false);
         setSearchQuery('');
@@ -120,10 +148,10 @@ export const TokenSelector: React.FC<{ selectedToken: any, onTokenSelect: (token
                     targetRect={targetRect}
                     onSelect={handleSelect}
                     onClose={() => setIsOpen(false)}
-                    tokens={tokens}
-                    isLoading={isLoading}
+                    filteredTokens={filteredTokens}
                     searchQuery={searchQuery}
                     setSearchQuery={setSearchQuery}
+                    // isLoading prop is no longer needed
                 />
             )}
         </div>
